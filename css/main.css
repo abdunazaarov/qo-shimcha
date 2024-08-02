@@ -1,0 +1,44 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f0f0f0;
+}
+.wrapper {
+    display: grid;
+    grid-template-areas: 
+        "one two"
+        "four three";
+    gap: 20px;
+    width: 200px;
+    position: relative;
+}
+.box {
+    width: 80px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    font-weight: bold;
+    color: white;
+}
+#one { grid-area: one; background-color: red; animation: cycle 4s infinite; }
+#two { grid-area: two; background-color: yellow; color: black; animation: cycle 4s infinite 1s; }
+#three { grid-area: three; background-color: green; animation: cycle 4s infinite 2s; }
+#four { grid-area: four; background-color: blue; animation: cycle 4s infinite 3s; }
+
+@keyframes cycle {
+    0% { background-color: red; }
+    25% { background-color: yellow; }
+    50% { background-color: green; }
+    75% { background-color: blue; }
+    100% { background-color: red; }
+}
